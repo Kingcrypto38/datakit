@@ -35,7 +35,7 @@ RUN opam install datakit -ytv
 RUN sudo cp $(opam config exec -- which datakit) /usr/bin/datakit && \
     sudo cp $(opam config exec -- which datakit-mount) /usr/bin/datakit-mount
 
-FROM alpine:3.9
+FROM alpine:3.18.6
 RUN apk add --no-cache libev gmp tzdata ca-certificates git openssh-client bash
 EXPOSE 5640
 ENTRYPOINT ["/usr/bin/datakit"]
