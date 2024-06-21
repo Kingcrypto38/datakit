@@ -34,7 +34,7 @@ RUN opam install datakit-bridge-github -ytv
 
 RUN sudo cp $(opam config exec -- which datakit-bridge-github) /usr/bin/
 
-FROM alpine:3.9
+FROM alpine:3.17
 RUN apk add --no-cache libev gmp tzdata ca-certificates
 EXPOSE 5640
 EXPOSE 5641
